@@ -1,0 +1,243 @@
+
+=== Running k_max = 5 ===
+  [kmax=5] Gen    0  error= 57.59%  triangles=  1
+  [kmax=5] Gen   50  error= 36.76%  triangles=  4
+  [kmax=5] Gen  100  error= 33.84%  triangles=  5
+  [kmax=5] Gen  150  error= 34.03%  triangles=  4
+  [kmax=5] Gen  200  error= 31.07%  triangles=  5
+  [kmax=5] Gen  250  error= 30.95%  triangles=  5
+  [kmax=5] Gen  300  error= 28.59%  triangles=  5
+  [kmax=5] Gen  350  error= 29.21%  triangles=  5
+  [kmax=5] Gen  400  error= 28.63%  triangles=  5
+  [kmax=5] Gen  450  error= 26.00%  triangles=  5
+  [kmax=5] Gen  500  error= 28.36%  triangles=  5
+  [kmax=5] Gen  550  error= 29.16%  triangles=  5
+  [kmax=5] Gen  600  error= 27.08%  triangles=  5
+  [kmax=5] Gen  650  error= 25.69%  triangles=  5
+  [kmax=5] Gen  700  error= 25.51%  triangles=  5
+  [kmax=5] Gen  750  error= 26.72%  triangles=  5
+  [kmax=5] Gen  800  error= 26.40%  triangles=  5
+  [kmax=5] Gen  850  error= 25.99%  triangles=  5
+  [kmax=5] Gen  900  error= 26.45%  triangles=  5
+  [kmax=5] Gen  950  error= 25.76%  triangles=  5
+  [kmax=5] Gen  999  error= 26.05%  triangles=  5
+
+=== Running k_max = 10 ===
+  [kmax=10] Gen    0  error= 53.49%  triangles=  2
+  [kmax=10] Gen   50  error= 30.49%  triangles= 10
+  [kmax=10] Gen  100  error= 28.59%  triangles= 10
+  [kmax=10] Gen  150  error= 25.75%  triangles= 10
+  [kmax=10] Gen  200  error= 20.91%  triangles= 10
+  [kmax=10] Gen  250  error= 20.73%  triangles= 10
+  [kmax=10] Gen  300  error= 19.29%  triangles=  8
+  [kmax=10] Gen  350  error= 21.13%  triangles= 10
+  [kmax=10] Gen  400  error= 20.77%  triangles= 10
+  [kmax=10] Gen  450  error= 19.89%  triangles= 10
+  [kmax=10] Gen  500  error= 21.08%  triangles= 10
+  [kmax=10] Gen  550  error= 20.66%  triangles= 10
+  [kmax=10] Gen  600  error= 20.30%  triangles= 10
+  [kmax=10] Gen  650  error= 18.65%  triangles= 10
+  [kmax=10] Gen  700  error= 20.32%  triangles= 10
+  [kmax=10] Gen  750  error= 20.00%  triangles= 10
+  [kmax=10] Gen  800  error= 20.04%  triangles= 10
+  [kmax=10] Gen  850  error= 19.54%  triangles= 10
+  [kmax=10] Gen  900  error= 22.08%  triangles= 10
+  [kmax=10] Gen  950  error= 20.28%  triangles=  9
+  [kmax=10] Gen  999  error= 20.34%  triangles= 10
+
+=== Running k_max = 15 ===
+  [kmax=15] Gen    0  error= 59.24%  triangles=  2
+  [kmax=15] Gen   50  error= 30.05%  triangles= 15
+  [kmax=15] Gen  100  error= 26.04%  triangles= 15
+  [kmax=15] Gen  150  error= 22.90%  triangles= 13
+  [kmax=15] Gen  200  error= 23.91%  triangles= 15
+  [kmax=15] Gen  250  error= 23.18%  triangles= 15
+  [kmax=15] Gen  300  error= 22.71%  triangles= 13
+  [kmax=15] Gen  350  error= 23.05%  triangles= 15
+  [kmax=15] Gen  400  error= 23.52%  triangles= 13
+  [kmax=15] Gen  450  error= 23.08%  triangles= 13
+  [kmax=15] Gen  500  error= 22.08%  triangles= 15
+  [kmax=15] Gen  550  error= 21.11%  triangles= 15
+  [kmax=15] Gen  600  error= 21.94%  triangles= 15
+  [kmax=15] Gen  650  error= 20.32%  triangles= 15
+  [kmax=15] Gen  700  error= 21.06%  triangles= 15
+  [kmax=15] Gen  750  error= 20.56%  triangles= 15
+  [kmax=15] Gen  800  error= 21.42%  triangles= 13
+  [kmax=15] Gen  850  error= 20.42%  triangles= 15
+  [kmax=15] Gen  900  error= 20.44%  triangles= 12
+  [kmax=15] Gen  950  error= 21.64%  triangles= 15
+  [kmax=15] Gen  999  error= 20.62%  triangles= 15
+
+=== Running k_max = 20 ===
+  [kmax=20] Gen    0  error= 57.78%  triangles=  1
+  [kmax=20] Gen   50  error= 26.13%  triangles= 20
+  [kmax=20] Gen  100  error= 25.73%  triangles= 20
+  [kmax=20] Gen  150  error= 21.41%  triangles= 20
+  [kmax=20] Gen  200  error= 20.57%  triangles= 20
+  [kmax=20] Gen  250  error= 19.85%  triangles= 20
+  [kmax=20] Gen  300  error= 19.29%  triangles= 20
+  [kmax=20] Gen  350  error= 19.97%  triangles= 20
+  [kmax=20] Gen  400  error= 20.42%  triangles= 17
+  [kmax=20] Gen  450  error= 19.74%  triangles= 20
+  [kmax=20] Gen  500  error= 18.36%  triangles= 20
+  [kmax=20] Gen  550  error= 17.98%  triangles= 18
+  [kmax=20] Gen  600  error= 19.10%  triangles= 20
+  [kmax=20] Gen  650  error= 18.59%  triangles= 20
+  [kmax=20] Gen  700  error= 18.75%  triangles= 18
+  [kmax=20] Gen  750  error= 18.21%  triangles= 20
+  [kmax=20] Gen  800  error= 19.51%  triangles= 20
+  [kmax=20] Gen  850  error= 18.36%  triangles= 20
+  [kmax=20] Gen  900  error= 18.47%  triangles= 20
+  [kmax=20] Gen  950  error= 14.81%  triangles= 20
+  [kmax=20] Gen  999  error= 19.40%  triangles= 19
+
+=== Running k_max = 30 ===
+  [kmax=30] Gen    0  error= 55.02%  triangles=  2
+  [kmax=30] Gen   50  error= 25.18%  triangles= 28
+  [kmax=30] Gen  100  error= 20.31%  triangles= 30
+  [kmax=30] Gen  150  error= 18.43%  triangles= 30
+  [kmax=30] Gen  200  error= 18.57%  triangles= 28
+  [kmax=30] Gen  250  error= 18.36%  triangles= 27
+  [kmax=30] Gen  300  error= 18.68%  triangles= 30
+  [kmax=30] Gen  350  error= 18.29%  triangles= 30
+  [kmax=30] Gen  400  error= 18.66%  triangles= 27
+  [kmax=30] Gen  450  error= 19.25%  triangles= 30
+  [kmax=30] Gen  500  error= 18.98%  triangles= 30
+  [kmax=30] Gen  550  error= 18.31%  triangles= 30
+  [kmax=30] Gen  600  error= 18.82%  triangles= 30
+  [kmax=30] Gen  650  error= 19.04%  triangles= 26
+  [kmax=30] Gen  700  error= 18.66%  triangles= 30
+  [kmax=30] Gen  750  error= 18.63%  triangles= 27
+  [kmax=30] Gen  800  error= 17.83%  triangles= 30
+  [kmax=30] Gen  850  error= 18.19%  triangles= 30
+  [kmax=30] Gen  900  error= 18.21%  triangles= 30
+  [kmax=30] Gen  950  error= 17.91%  triangles= 30
+  [kmax=30] Gen  999  error= 17.63%  triangles= 30
+
+=== Running k_max = 40 ===
+  [kmax=40] Gen    0  error= 57.70%  triangles=  2
+  [kmax=40] Gen   50  error= 23.39%  triangles= 34
+  [kmax=40] Gen  100  error= 21.34%  triangles= 38
+  [kmax=40] Gen  150  error= 18.77%  triangles= 40
+  [kmax=40] Gen  200  error= 18.11%  triangles= 32
+  [kmax=40] Gen  250  error= 18.14%  triangles= 39
+  [kmax=40] Gen  300  error= 18.31%  triangles= 37
+  [kmax=40] Gen  350  error= 17.79%  triangles= 40
+  [kmax=40] Gen  400  error= 17.75%  triangles= 40
+  [kmax=40] Gen  450  error= 18.25%  triangles= 37
+  [kmax=40] Gen  500  error= 14.84%  triangles= 40
+  [kmax=40] Gen  550  error= 15.15%  triangles= 40
+  [kmax=40] Gen  600  error= 16.22%  triangles= 40
+  [kmax=40] Gen  650  error= 15.77%  triangles= 39
+  [kmax=40] Gen  700  error= 15.40%  triangles= 40
+  [kmax=40] Gen  750  error= 15.37%  triangles= 40
+  [kmax=40] Gen  800  error= 14.83%  triangles= 40
+  [kmax=40] Gen  850  error= 15.78%  triangles= 40
+  [kmax=40] Gen  900  error= 15.01%  triangles= 33
+  [kmax=40] Gen  950  error= 15.84%  triangles= 34
+  [kmax=40] Gen  999  error= 14.66%  triangles= 35
+
+=== Running k_max = 50 ===
+  [kmax=50] Gen    0  error= 54.46%  triangles=  2
+  [kmax=50] Gen   50  error= 20.49%  triangles= 48
+  [kmax=50] Gen  100  error= 19.53%  triangles= 50
+  [kmax=50] Gen  150  error= 17.96%  triangles= 47
+  [kmax=50] Gen  200  error= 17.25%  triangles= 35
+  [kmax=50] Gen  250  error= 16.67%  triangles= 50
+  [kmax=50] Gen  300  error= 16.55%  triangles= 42
+  [kmax=50] Gen  350  error= 16.32%  triangles= 37
+  [kmax=50] Gen  400  error= 16.53%  triangles= 50
+  [kmax=50] Gen  450  error= 17.20%  triangles= 41
+  [kmax=50] Gen  500  error= 15.64%  triangles= 50
+  [kmax=50] Gen  550  error= 15.80%  triangles= 44
+  [kmax=50] Gen  600  error= 16.27%  triangles= 49
+  [kmax=50] Gen  650  error= 15.96%  triangles= 50
+  [kmax=50] Gen  700  error= 15.78%  triangles= 50
+  [kmax=50] Gen  750  error= 16.06%  triangles= 50
+  [kmax=50] Gen  800  error= 15.78%  triangles= 48
+  [kmax=50] Gen  850  error= 14.78%  triangles= 50
+  [kmax=50] Gen  900  error= 16.02%  triangles= 48
+  [kmax=50] Gen  950  error= 16.13%  triangles= 50
+  [kmax=50] Gen  999  error= 15.19%  triangles= 39
+
+=== Running k_max = 60 ===
+  [kmax=60] Gen    0  error= 56.56%  triangles=  2
+  [kmax=60] Gen   50  error= 25.16%  triangles= 55
+  [kmax=60] Gen  100  error= 22.60%  triangles= 56
+  [kmax=60] Gen  150  error= 21.89%  triangles= 60
+  [kmax=60] Gen  200  error= 21.11%  triangles= 60
+  [kmax=60] Gen  250  error= 18.02%  triangles= 59
+  [kmax=60] Gen  300  error= 17.99%  triangles= 52
+  [kmax=60] Gen  350  error= 18.00%  triangles= 60
+  [kmax=60] Gen  400  error= 18.10%  triangles= 57
+  [kmax=60] Gen  450  error= 19.27%  triangles= 50
+  [kmax=60] Gen  500  error= 19.26%  triangles= 60
+  [kmax=60] Gen  550  error= 18.43%  triangles= 59
+  [kmax=60] Gen  600  error= 19.17%  triangles= 59
+  [kmax=60] Gen  650  error= 17.22%  triangles= 60
+  [kmax=60] Gen  700  error= 17.50%  triangles= 60
+  [kmax=60] Gen  750  error= 17.13%  triangles= 60
+  [kmax=60] Gen  800  error= 17.15%  triangles= 56
+  [kmax=60] Gen  850  error= 16.14%  triangles= 60
+  [kmax=60] Gen  900  error= 15.89%  triangles= 59
+  [kmax=60] Gen  950  error= 15.81%  triangles= 60
+  [kmax=60] Gen  999  error= 16.28%  triangles= 60
+
+=== Running k_max = 70 ===
+  [kmax=70] Gen    0  error= 54.75%  triangles=  2
+  [kmax=70] Gen   50  error= 24.24%  triangles= 70
+  [kmax=70] Gen  100  error= 21.97%  triangles= 58
+  [kmax=70] Gen  150  error= 18.65%  triangles= 70
+  [kmax=70] Gen  200  error= 18.19%  triangles= 70
+  [kmax=70] Gen  250  error= 17.93%  triangles= 64
+  [kmax=70] Gen  300  error= 17.29%  triangles= 69
+  [kmax=70] Gen  350  error= 16.65%  triangles= 70
+  [kmax=70] Gen  400  error= 16.26%  triangles= 68
+  [kmax=70] Gen  450  error= 16.18%  triangles= 60
+  [kmax=70] Gen  500  error= 16.45%  triangles= 58
+  [kmax=70] Gen  550  error= 15.68%  triangles= 70
+  [kmax=70] Gen  600  error= 15.28%  triangles= 69
+  [kmax=70] Gen  650  error= 15.08%  triangles= 70
+  [kmax=70] Gen  700  error= 15.32%  triangles= 70
+  [kmax=70] Gen  750  error= 15.10%  triangles= 70
+  [kmax=70] Gen  800  error= 14.62%  triangles= 70
+  [kmax=70] Gen  850  error= 14.95%  triangles= 70
+  [kmax=70] Gen  900  error= 15.17%  triangles= 70
+  [kmax=70] Gen  950  error= 14.40%  triangles= 70
+  [kmax=70] Gen  999  error= 14.12%  triangles= 58
+
+=== Running k_max = 80 ===
+  [kmax=80] Gen    0  error= 57.60%  triangles=  1
+  [kmax=80] Gen   50  error= 23.90%  triangles= 70
+  [kmax=80] Gen  100  error= 20.48%  triangles= 80
+  [kmax=80] Gen  150  error= 19.71%  triangles= 80
+  [kmax=80] Gen  200  error= 18.71%  triangles= 74
+  [kmax=80] Gen  250  error= 18.17%  triangles= 80
+  [kmax=80] Gen  300  error= 17.22%  triangles= 67
+  [kmax=80] Gen  350  error= 17.13%  triangles= 79
+  [kmax=80] Gen  400  error= 17.27%  triangles= 76
+  [kmax=80] Gen  450  error= 17.14%  triangles= 80
+  [kmax=80] Gen  500  error= 16.10%  triangles= 80
+  [kmax=80] Gen  550  error= 15.41%  triangles= 74
+  [kmax=80] Gen  600  error= 15.03%  triangles= 80
+  [kmax=80] Gen  650  error= 15.14%  triangles= 75
+  [kmax=80] Gen  700  error= 15.19%  triangles= 80
+  [kmax=80] Gen  750  error= 14.89%  triangles= 72
+  [kmax=80] Gen  800  error= 14.95%  triangles= 78
+  [kmax=80] Gen  850  error= 15.50%  triangles= 78
+  [kmax=80] Gen  900  error= 15.61%  triangles= 75
+  [kmax=80] Gen  950  error= 15.12%  triangles= 65
+  [kmax=80] Gen  999  error= 15.36%  triangles= 76
+
+=== Sweep complete ===
+  kmax   error%   tris
+     5    26.05      5
+    10    20.34     10
+    15    20.62     15
+    20    19.40     19
+    30    17.63     30
+    40    14.66     35
+    50    15.19     39
+    60    16.28     60
+    70    14.12     58
+    80    15.36     76
