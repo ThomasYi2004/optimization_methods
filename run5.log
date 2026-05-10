@@ -1,0 +1,9 @@
+  [kmax=20] Gen    0  error= 3.022%  triangles= 20  t=   0.7s
+  [kmax=20] Gen   10  error= 3.022%  triangles= 20  t=   7.7s
+  [kmax=20] Gen   20  error= 3.022%  triangles= 20  t=  14.7s
+  [kmax=20] Gen   30  error= 3.022%  triangles= 20  t=  21.8s
+  [kmax=20] Gen   40  error= 3.007%  triangles= 20  t=  28.9s
+  [kmax=20] Gen   50  error= 2.983%  triangles= 20  t=  35.9s
+  [kmax=20] Target 3.0% reached at gen 50 (error=2.983%).
+
+GA done: kmax=20, error=2.983%, triangles=20

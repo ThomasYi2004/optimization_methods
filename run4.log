@@ -1,0 +1,203 @@
+  [kmax=20] Gen    0  error=40.939%  triangles=  1  t=   0.4s
+  [kmax=20] Gen   10  error=11.959%  triangles= 17  t=   6.3s
+  [kmax=20] Gen   20  error= 8.392%  triangles= 20  t=  14.2s
+  [kmax=20] Gen   30  error= 6.872%  triangles= 20  t=  21.9s
+  [kmax=20] Gen   40  error= 6.203%  triangles= 20  t=  29.5s
+  [kmax=20] Gen   50  error= 5.526%  triangles= 20  t=  37.1s
+  [kmax=20] Gen   60  error= 5.474%  triangles= 19  t=  44.6s
+  [kmax=20] Gen   70  error= 5.206%  triangles= 20  t=  52.1s
+  [kmax=20] Gen   80  error= 5.111%  triangles= 20  t=  59.6s
+  [kmax=20] Gen   90  error= 5.011%  triangles= 19  t=  67.1s
+  [kmax=20] Gen  100  error= 5.011%  triangles= 19  t=  74.7s
+  [kmax=20] Gen  110  error= 4.913%  triangles= 20  t=  82.2s
+  [kmax=20] Gen  120  error= 4.848%  triangles= 20  t=  89.7s
+  [kmax=20] Gen  130  error= 4.762%  triangles= 19  t=  97.2s
+  [kmax=20] Gen  140  error= 4.711%  triangles= 20  t= 104.7s
+  [kmax=20] Gen  150  error= 4.672%  triangles= 20  t= 112.1s
+  [kmax=20] Gen  160  error= 4.608%  triangles= 18  t= 119.4s
+  [kmax=20] Gen  170  error= 4.606%  triangles= 20  t= 126.8s
+  [kmax=20] Gen  180  error= 4.606%  triangles= 20  t= 134.1s
+  [kmax=20] Gen  190  error= 4.598%  triangles= 20  t= 141.3s
+  [kmax=20] Gen  200  error= 4.579%  triangles= 20  t= 148.6s
+  [kmax=20] Gen  210  error= 4.555%  triangles= 19  t= 155.8s
+  [kmax=20] Gen  220  error= 4.438%  triangles= 20  t= 163.1s
+  [kmax=20] Gen  230  error= 4.394%  triangles= 19  t= 170.3s
+  [kmax=20] Gen  240  error= 4.140%  triangles= 20  t= 177.5s
+  [kmax=20] Gen  250  error= 4.113%  triangles= 20  t= 184.7s
+  [kmax=20] Gen  260  error= 4.096%  triangles= 20  t= 191.9s
+  [kmax=20] Gen  270  error= 3.992%  triangles= 20  t= 199.1s
+  [kmax=20] Gen  280  error= 3.992%  triangles= 20  t= 206.3s
+  [kmax=20] Gen  290  error= 3.936%  triangles= 20  t= 213.5s
+  [kmax=20] Gen  300  error= 3.924%  triangles= 20  t= 220.7s
+  [kmax=20] Gen  310  error= 3.901%  triangles= 20  t= 227.9s
+  [kmax=20] Gen  320  error= 3.880%  triangles= 19  t= 235.1s
+  [kmax=20] Gen  330  error= 3.880%  triangles= 19  t= 242.3s
+  [kmax=20] Gen  340  error= 3.813%  triangles= 19  t= 249.5s
+  [kmax=20] Gen  350  error= 3.813%  triangles= 19  t= 256.6s
+  [kmax=20] Gen  360  error= 3.813%  triangles= 19  t= 263.8s
+  [kmax=20] Gen  370  error= 3.812%  triangles= 19  t= 271.0s
+  [kmax=20] Gen  380  error= 3.785%  triangles= 20  t= 278.2s
+  [kmax=20] Gen  390  error= 3.762%  triangles= 20  t= 285.5s
+  [kmax=20] Gen  400  error= 3.762%  triangles= 20  t= 292.7s
+  [kmax=20] Gen  410  error= 3.754%  triangles= 20  t= 299.7s
+  [kmax=20] Gen  420  error= 3.713%  triangles= 19  t= 305.3s
+  [kmax=20] Gen  430  error= 3.713%  triangles= 19  t= 310.9s
+  [kmax=20] Gen  440  error= 3.713%  triangles= 19  t= 316.6s
+  [kmax=20] Gen  450  error= 3.684%  triangles= 20  t= 322.3s
+  [kmax=20] Gen  460  error= 3.606%  triangles= 20  t= 329.4s
+  [kmax=20] Gen  470  error= 3.590%  triangles= 20  t= 336.6s
+  [kmax=20] Gen  480  error= 3.590%  triangles= 20  t= 343.7s
+  [kmax=20] Gen  490  error= 3.590%  triangles= 20  t= 350.8s
+  [kmax=20] Gen  500  error= 3.498%  triangles= 20  t= 357.9s
+  [kmax=20] Gen  510  error= 3.492%  triangles= 20  t= 365.0s
+  [kmax=20] Gen  520  error= 3.486%  triangles= 20  t= 372.1s
+  [kmax=20] Gen  530  error= 3.479%  triangles= 20  t= 379.2s
+  [kmax=20] Gen  540  error= 3.469%  triangles= 20  t= 386.3s
+  [kmax=20] Gen  550  error= 3.469%  triangles= 20  t= 393.4s
+  [kmax=20] Gen  560  error= 3.469%  triangles= 20  t= 400.5s
+  [kmax=20] Gen  570  error= 3.469%  triangles= 20  t= 407.6s
+  [kmax=20] Gen  580  error= 3.466%  triangles= 20  t= 414.8s
+  [kmax=20] Gen  590  error= 3.458%  triangles= 20  t= 421.9s
+  [kmax=20] Gen  600  error= 3.458%  triangles= 20  t= 428.9s
+  [kmax=20] Gen  610  error= 3.458%  triangles= 20  t= 436.0s
+  [kmax=20] Gen  620  error= 3.458%  triangles= 20  t= 443.0s
+  [kmax=20] Gen  630  error= 3.456%  triangles= 20  t= 450.0s
+  [kmax=20] Gen  640  error= 3.456%  triangles= 20  t= 457.1s
+  [kmax=20] Gen  650  error= 3.456%  triangles= 20  t= 464.1s
+  [kmax=20] Gen  660  error= 3.417%  triangles= 19  t= 471.1s
+  [kmax=20] Gen  670  error= 3.407%  triangles= 19  t= 478.1s
+  [kmax=20] Gen  680  error= 3.407%  triangles= 19  t= 485.1s
+  [kmax=20] Gen  690  error= 3.407%  triangles= 19  t= 492.1s
+  [kmax=20] Gen  700  error= 3.407%  triangles= 19  t= 499.1s
+  [kmax=20] Gen  710  error= 3.388%  triangles= 20  t= 506.2s
+  [kmax=20] Gen  720  error= 3.388%  triangles= 20  t= 513.2s
+  [kmax=20] Gen  730  error= 3.388%  triangles= 20  t= 520.2s
+  [kmax=20] Gen  740  error= 3.388%  triangles= 20  t= 527.2s
+  [kmax=20] Gen  750  error= 3.388%  triangles= 20  t= 534.2s
+  [kmax=20] Gen  760  error= 3.385%  triangles= 20  t= 541.3s
+  [kmax=20] Gen  770  error= 3.385%  triangles= 20  t= 548.3s
+  [kmax=20] Gen  780  error= 3.383%  triangles= 20  t= 555.4s
+  [kmax=20] Gen  790  error= 3.336%  triangles= 20  t= 562.4s
+  [kmax=20] Gen  800  error= 3.336%  triangles= 20  t= 569.5s
+  [kmax=20] Gen  810  error= 3.336%  triangles= 20  t= 576.5s
+  [kmax=20] Gen  820  error= 3.334%  triangles= 20  t= 583.5s
+  [kmax=20] Gen  830  error= 3.334%  triangles= 20  t= 590.6s
+  [kmax=20] Gen  840  error= 3.334%  triangles= 20  t= 597.6s
+  [kmax=20] Gen  850  error= 3.322%  triangles= 20  t= 604.7s
+  [kmax=20] Gen  860  error= 3.322%  triangles= 20  t= 611.7s
+  [kmax=20] Gen  870  error= 3.322%  triangles= 20  t= 618.7s
+  [kmax=20] Gen  880  error= 3.319%  triangles= 20  t= 625.7s
+  [kmax=20] Gen  890  error= 3.319%  triangles= 20  t= 632.7s
+  [kmax=20] Gen  900  error= 3.306%  triangles= 20  t= 639.7s
+  [kmax=20] Gen  910  error= 3.306%  triangles= 20  t= 646.8s
+  [kmax=20] Gen  920  error= 3.304%  triangles= 20  t= 653.8s
+  [kmax=20] Gen  930  error= 3.304%  triangles= 20  t= 660.9s
+  [kmax=20] Gen  940  error= 3.304%  triangles= 20  t= 667.9s
+  [kmax=20] Gen  950  error= 3.302%  triangles= 20  t= 674.9s
+  [kmax=20] Gen  960  error= 3.302%  triangles= 20  t= 682.0s
+  [kmax=20] Gen  970  error= 3.299%  triangles= 20  t= 689.0s
+  [kmax=20] Gen  980  error= 3.299%  triangles= 20  t= 696.1s
+  [kmax=20] Gen  990  error= 3.299%  triangles= 20  t= 703.1s
+  [kmax=20] Gen 1000  error= 3.299%  triangles= 20  t= 710.1s
+  [kmax=20] Gen 1010  error= 3.299%  triangles= 20  t= 717.2s
+  [kmax=20] Gen 1020  error= 3.299%  triangles= 20  t= 724.3s
+  [kmax=20] Gen 1030  error= 3.295%  triangles= 20  t= 731.3s
+  [kmax=20] Gen 1040  error= 3.295%  triangles= 20  t= 738.3s
+  [kmax=20] Gen 1050  error= 3.295%  triangles= 20  t= 745.4s
+  [kmax=20] Gen 1060  error= 3.295%  triangles= 20  t= 752.5s
+  [kmax=20] Gen 1070  error= 3.295%  triangles= 20  t= 759.5s
+  [kmax=20] Gen 1080  error= 3.295%  triangles= 20  t= 766.6s
+  [kmax=20] Gen 1090  error= 3.293%  triangles= 20  t= 773.7s
+  [kmax=20] Gen 1100  error= 3.293%  triangles= 20  t= 780.7s
+  [kmax=20] Gen 1110  error= 3.293%  triangles= 20  t= 787.8s
+  [kmax=20] Gen 1120  error= 3.288%  triangles= 20  t= 794.8s
+  [kmax=20] Gen 1130  error= 3.288%  triangles= 20  t= 801.9s
+  [kmax=20] Gen 1140  error= 3.288%  triangles= 20  t= 808.9s
+  [kmax=20] Gen 1150  error= 3.288%  triangles= 20  t= 816.0s
+  [kmax=20] Gen 1160  error= 3.288%  triangles= 20  t= 823.0s
+  [kmax=20] Gen 1170  error= 3.288%  triangles= 20  t= 830.1s
+  [kmax=20] Gen 1180  error= 3.288%  triangles= 20  t= 837.1s
+  [kmax=20] Gen 1190  error= 3.288%  triangles= 20  t= 844.2s
+  [kmax=20] Gen 1200  error= 3.288%  triangles= 20  t= 851.2s
+  [kmax=20] Gen 1210  error= 3.288%  triangles= 20  t= 858.3s
+  [kmax=20] Gen 1220  error= 3.288%  triangles= 20  t= 865.4s
+  [kmax=20] Gen 1230  error= 3.287%  triangles= 20  t= 872.4s
+  [kmax=20] Gen 1240  error= 3.287%  triangles= 20  t= 879.5s
+  [kmax=20] Gen 1250  error= 3.287%  triangles= 20  t= 886.5s
+  [kmax=20] Gen 1260  error= 3.287%  triangles= 20  t= 893.6s
+  [kmax=20] Gen 1270  error= 3.287%  triangles= 20  t= 900.7s
+  [kmax=20] Gen 1280  error= 3.285%  triangles= 20  t= 907.8s
+  [kmax=20] Gen 1290  error= 3.261%  triangles= 20  t= 914.8s
+  [kmax=20] Gen 1300  error= 3.261%  triangles= 20  t= 921.9s
+  [kmax=20] Gen 1310  error= 3.261%  triangles= 20  t= 929.0s
+  [kmax=20] Gen 1320  error= 3.261%  triangles= 20  t= 936.1s
+  [kmax=20] Gen 1330  error= 3.248%  triangles= 20  t= 943.2s
+  [kmax=20] Gen 1340  error= 3.248%  triangles= 20  t= 950.2s
+  [kmax=20] Gen 1350  error= 3.232%  triangles= 20  t= 957.3s
+  [kmax=20] Gen 1360  error= 3.228%  triangles= 20  t= 964.3s
+  [kmax=20] Gen 1370  error= 3.228%  triangles= 20  t= 971.4s
+  [kmax=20] Gen 1380  error= 3.228%  triangles= 20  t= 978.4s
+  [kmax=20] Gen 1390  error= 3.228%  triangles= 20  t= 985.4s
+  [kmax=20] Gen 1400  error= 3.228%  triangles= 20  t= 992.5s
+  [kmax=20] Gen 1410  error= 3.228%  triangles= 20  t= 999.5s
+  [kmax=20] Gen 1420  error= 3.228%  triangles= 20  t=1006.6s
+  [kmax=20] Gen 1430  error= 3.226%  triangles= 20  t=1013.7s
+  [kmax=20] Gen 1440  error= 3.226%  triangles= 20  t=1020.7s
+  [kmax=20] Gen 1450  error= 3.225%  triangles= 20  t=1027.8s
+  [kmax=20] Gen 1460  error= 3.223%  triangles= 20  t=1034.9s
+  [kmax=20] Gen 1470  error= 3.223%  triangles= 20  t=1041.9s
+  [kmax=20] Gen 1480  error= 3.199%  triangles= 20  t=1049.0s
+  [kmax=20] Gen 1490  error= 3.199%  triangles= 20  t=1056.0s
+  [kmax=20] Gen 1500  error= 3.199%  triangles= 20  t=1063.1s
+  [kmax=20] Gen 1510  error= 3.194%  triangles= 20  t=1070.2s
+  [kmax=20] Gen 1520  error= 3.194%  triangles= 20  t=1077.2s
+  [kmax=20] Gen 1530  error= 3.194%  triangles= 20  t=1084.3s
+  [kmax=20] Gen 1540  error= 3.194%  triangles= 20  t=1091.3s
+  [kmax=20] Gen 1550  error= 3.194%  triangles= 20  t=1098.4s
+  [kmax=20] Gen 1560  error= 3.194%  triangles= 20  t=1105.4s
+  [kmax=20] Gen 1570  error= 3.194%  triangles= 20  t=1112.4s
+  [kmax=20] Gen 1580  error= 3.194%  triangles= 20  t=1119.4s
+  [kmax=20] Gen 1590  error= 3.194%  triangles= 20  t=1126.4s
+  [kmax=20] Gen 1600  error= 3.194%  triangles= 20  t=1133.4s
+  [kmax=20] Gen 1610  error= 3.194%  triangles= 20  t=1140.4s
+  [kmax=20] Gen 1620  error= 3.189%  triangles= 20  t=1147.5s
+  [kmax=20] Gen 1630  error= 3.189%  triangles= 20  t=1154.6s
+  [kmax=20] Gen 1640  error= 3.189%  triangles= 20  t=1161.6s
+  [kmax=20] Gen 1650  error= 3.176%  triangles= 20  t=1168.7s
+  [kmax=20] Gen 1660  error= 3.175%  triangles= 20  t=1175.7s
+  [kmax=20] Gen 1670  error= 3.161%  triangles= 20  t=1182.8s
+  [kmax=20] Gen 1680  error= 3.161%  triangles= 20  t=1189.8s
+  [kmax=20] Gen 1690  error= 3.161%  triangles= 20  t=1196.8s
+  [kmax=20] Gen 1700  error= 3.161%  triangles= 20  t=1203.9s
+  [kmax=20] Gen 1710  error= 3.161%  triangles= 20  t=1211.0s
+  [kmax=20] Gen 1720  error= 3.161%  triangles= 20  t=1218.0s
+  [kmax=20] Gen 1730  error= 3.161%  triangles= 20  t=1225.0s
+  [kmax=20] Gen 1740  error= 3.160%  triangles= 20  t=1232.0s
+  [kmax=20] Gen 1750  error= 3.160%  triangles= 20  t=1239.1s
+  [kmax=20] Gen 1760  error= 3.160%  triangles= 20  t=1246.1s
+  [kmax=20] Gen 1770  error= 3.160%  triangles= 20  t=1253.2s
+  [kmax=20] Gen 1780  error= 3.121%  triangles= 20  t=1260.2s
+  [kmax=20] Gen 1790  error= 3.121%  triangles= 20  t=1267.3s
+  [kmax=20] Gen 1800  error= 3.121%  triangles= 20  t=1274.4s
+  [kmax=20] Gen 1810  error= 3.121%  triangles= 20  t=1281.4s
+  [kmax=20] Gen 1820  error= 3.116%  triangles= 20  t=1288.4s
+  [kmax=20] Gen 1830  error= 3.116%  triangles= 20  t=1295.5s
+  [kmax=20] Gen 1840  error= 3.116%  triangles= 20  t=1302.5s
+  [kmax=20] Gen 1850  error= 3.116%  triangles= 20  t=1309.6s
+  [kmax=20] Gen 1860  error= 3.116%  triangles= 20  t=1316.6s
+  [kmax=20] Gen 1870  error= 3.096%  triangles= 20  t=1323.7s
+  [kmax=20] Gen 1880  error= 3.096%  triangles= 20  t=1330.7s
+  [kmax=20] Gen 1890  error= 3.096%  triangles= 20  t=1337.7s
+  [kmax=20] Gen 1900  error= 3.096%  triangles= 20  t=1344.8s
+  [kmax=20] Gen 1910  error= 3.096%  triangles= 20  t=1351.8s
+  [kmax=20] Gen 1920  error= 3.094%  triangles= 20  t=1358.9s
+  [kmax=20] Gen 1930  error= 3.094%  triangles= 20  t=1365.9s
+  [kmax=20] Gen 1940  error= 3.094%  triangles= 20  t=1373.0s
+  [kmax=20] Gen 1950  error= 3.094%  triangles= 20  t=1380.0s
+  [kmax=20] Gen 1960  error= 3.094%  triangles= 20  t=1387.1s
+  [kmax=20] Gen 1970  error= 3.094%  triangles= 20  t=1394.1s
+  [kmax=20] Gen 1980  error= 3.094%  triangles= 20  t=1401.2s
+  [kmax=20] Gen 1990  error= 3.094%  triangles= 20  t=1408.3s
+  [kmax=20] Gen 1999  error= 3.094%  triangles= 20  t=1414.6s
+
+GA done: kmax=20, error=3.094%, triangles=20

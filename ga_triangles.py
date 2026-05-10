@@ -1,20 +1,35 @@
-"""GA-based binary image approximation with triangles, with k_max constraint."""
+"""GA-based binary image approximation with triangles, with k_max constraint.
+
+Drives error below TARGET_ERROR (default 3%) using elitist selection plus
+random/Gaussian-nudge mutations and uniform-triangle crossover.
+"""
 import os
 import sys
+import json
 import random
+import time
 import numpy as np
 from PIL import Image, ImageDraw
 
 IMG_SIZE = 360
 POP_SIZE = 2048
-N_GENERATIONS = 200
-P_M1 = 0.30   # remove triangle
+N_GENERATIONS = 6000
+P_M1 = 0.10   # remove triangle
 P_M2 = 0.50   # add triangle
-P_M3 = 0.80   # mutate vertices
-N_REPLACE = 1800  # worst individuals replaced each generation
+P_M3 = 0.80   # mutate vertices (vertex change / translate / color flip)
+P_M4 = 0.40   # z-order swap two triangles
+P_M5 = 0.50   # translate one triangle as a whole
+N_ELITE = 248                       # 248 fittest kept; 1800 replaced (paper)
+N_REPLACE = POP_SIZE - N_ELITE
 SAVE_EVERY = 50
 OUTPUT_DIR = "output"
-KMAX_VALUES = [20]
+KMAX_DEFAULT = 20
+TARGET_ERROR = 3.0                  # stop when best error reaches this
+
+VERTEX_MARGIN = 0.10  # fraction of n by which vertices may overshoot edges
+P_FINE = 0.85         # share of M3 vertex changes that are small Gaussian nudges
+# Mixed Gaussian step sizes (in pixels) — picks one uniformly per nudge
+SIGMA_PIXELS = (1, 1, 2, 2, 3, 5, 8, 16)
 
 
 def load_target(path, n):
@@ -24,18 +39,16 @@ def load_target(path, n):
     return bwimage
 
 
-VERTEX_MARGIN = 0.25  # fraction of n by which vertices may overshoot edges
-P_FINE = 1.0          # share of M3 vertex changes that are small Gaussian nudges
-SIGMA_FRAC = 0.1     # Gaussian step size, as fraction of n
-
 def _coord(n):
     m = int(n * VERTEX_MARGIN)
     return random.randint(-m, n - 1 + m)
 
+
 def _nudge(v, n):
-    sigma = SIGMA_FRAC * n
+    sigma = random.choice(SIGMA_PIXELS)
     m = int(n * VERTEX_MARGIN)
     return max(-m, min(n - 1 + m, int(v + random.gauss(0, sigma))))
+
 
 def random_triangle(n):
     verts = [(_coord(n), _coord(n)) for _ in range(3)]
@@ -56,21 +69,9 @@ def error(chromosome, target, n):
     return float(np.mean(rendered != target) * 100.0)
 
 
-def _worst_triangle_idx(chromosome, target, n):
-    """Index of triangle whose removal least hurts (or most helps) error."""
-    best_idx, best_delta = 0, float("inf")
-    base = error(chromosome, target, n)
-    for i in range(len(chromosome)):
-        e = error(chromosome[:i] + chromosome[i + 1:], target, n)
-        delta = e - base  # negative = removing this triangle improves error
-        if delta < best_delta:
-            best_delta, best_idx = delta, i
-    return best_idx
-
-
-def mutate(chromosome, n, kmax, target):
+def mutate(chromosome, n, kmax):
     if chromosome and random.random() < P_M1:
-        chromosome.pop(_worst_triangle_idx(chromosome, target, n))
+        chromosome.pop(random.randrange(len(chromosome)))
     if random.random() < P_M2 and len(chromosome) < kmax:
         chromosome.append(random_triangle(n))
     if chromosome and random.random() < P_M3:
@@ -83,7 +84,32 @@ def mutate(chromosome, n, kmax, target):
                 verts[i] = (_nudge(vx, n), _nudge(vy, n))
             else:
                 verts[i] = (_coord(n), _coord(n))
+        if random.random() < 0.05:
+            color = 1 - color
         chromosome[idx] = [verts, color]
+    # M4: swap z-order of two triangles
+    if len(chromosome) >= 2 and random.random() < P_M4:
+        i, j = random.sample(range(len(chromosome)), 2)
+        chromosome[i], chromosome[j] = chromosome[j], chromosome[i]
+    # M5: translate a whole triangle by a small random offset
+    if chromosome and random.random() < P_M5:
+        idx = random.randrange(len(chromosome))
+        verts, color = chromosome[idx]
+        sigma = random.choice(SIGMA_PIXELS)
+        dx = int(random.gauss(0, sigma))
+        dy = int(random.gauss(0, sigma))
+        m = int(n * VERTEX_MARGIN)
+        new_verts = []
+        for vx, vy in verts:
+            nx = max(-m, min(n - 1 + m, vx + dx))
+            ny = max(-m, min(n - 1 + m, vy + dy))
+            new_verts.append((nx, ny))
+        chromosome[idx] = [new_verts, color]
+    return chromosome
+
+
+def clone(chromosome):
+    return [[list(verts), color] for verts, color in chromosome]
 
 
 def crossover(p1, p2, n, kmax):
@@ -104,40 +130,162 @@ def save_image(arr, path):
     Image.fromarray((arr * 255).astype(np.uint8)).save(path)
 
 
-def run_ga(target, n, kmax, n_gens, out_dir):
+def save_chromosome(chromosome, path):
+    serial = [[[list(v) for v in verts], int(c)] for verts, c in chromosome]
+    with open(path, "w") as f:
+        json.dump(serial, f)
+
+
+def load_chromosome(path):
+    with open(path) as f:
+        data = json.load(f)
+    return [[[tuple(v) for v in verts], int(c)] for verts, c in data]
+
+
+def run_ga(target, n, kmax, n_gens, out_dir, target_error=TARGET_ERROR,
+           seed_chromosome=None):
     os.makedirs(out_dir, exist_ok=True)
-    population = [[random_triangle(n)] for _ in range(POP_SIZE)]
-    keep = POP_SIZE - N_REPLACE
+    if seed_chromosome is None:
+        population = [[random_triangle(n)] for _ in range(POP_SIZE)]
+    else:
+        population = [clone(seed_chromosome) for _ in range(POP_SIZE)]
+    errors = [error(c, target, n) for c in population]
     history = []
-    best_error = 100.0
+    t0 = time.time()
+
+    # External archive: absolute best ever seen, never mutated
+    archive = clone(population[int(np.argmin(errors))])
+    archive_err = float(min(errors))
 
     for gen in range(n_gens):
-        # Soft selection: mutate everyone (incl. previous survivors) every gen.
+        # 1. Mutate every individual (paper: "Apply mutation to introduce variation").
         for c in population:
-            mutate(c, n, kmax, target)
+            mutate(c, n, kmax)
+        # 2. Evaluate
         errors = [error(c, target, n) for c in population]
-
+        # 3. Track absolute best via archive
+        gen_best_idx = int(np.argmin(errors))
+        if errors[gen_best_idx] < archive_err:
+            archive = clone(population[gen_best_idx])
+            archive_err = errors[gen_best_idx]
+        # 4. Sort: top N_ELITE survive; bottom N_REPLACE are replaced via crossover.
         order = np.argsort(errors)
         population = [population[i] for i in order]
         errors = [errors[i] for i in order]
+        # Inject archive as first individual to guarantee elitism.
+        population[0] = clone(archive)
+        errors[0] = archive_err
 
-        best, best_error = population[0], errors[0]
-        history.append((gen, best_error, len(best)))
-        print(f"  [kmax={kmax}] Gen {gen:4d}  error={best_error:6.2f}%  triangles={len(best):3d}")
+        history.append((gen, archive_err, len(archive)))
+
+        if gen % 10 == 0 or gen == n_gens - 1:
+            elapsed = time.time() - t0
+            print(f"  [kmax={kmax}] Gen {gen:4d}  error={archive_err:6.3f}%  "
+                  f"triangles={len(archive):3d}  t={elapsed:6.1f}s")
         if gen % SAVE_EVERY == 0 or gen == n_gens - 1:
-            save_image(rasterize(best, n), os.path.join(out_dir, f"gen_{gen:04d}.png"))
+            save_image(rasterize(archive, n), os.path.join(out_dir, f"gen_{gen:04d}.png"))
 
-        survivors = population[:keep]
+        if archive_err <= target_error:
+            print(f"  [kmax={kmax}] Target {target_error}% reached at gen {gen} "
+                  f"(error={archive_err:.3f}%).")
+            break
+
+        # 5. Replace bottom N_REPLACE with crossover offspring of survivors (top 248).
+        survivors = population[:N_ELITE]
         children = [crossover(*random.sample(survivors, 2), n, kmax)
                     for _ in range(N_REPLACE)]
         population = survivors + children
+        # children's errors will be recomputed after next mutation pass
+        errors[N_ELITE:] = [None] * N_REPLACE
 
-    save_image(rasterize(population[0], n), os.path.join(out_dir, "best.png"))
+    save_image(rasterize(archive, n), os.path.join(out_dir, "best.png"))
+    save_chromosome(archive, os.path.join(out_dir, "best.json"))
     with open(os.path.join(out_dir, "history.csv"), "w") as f:
         f.write("generation,error,triangles\n")
         for g, e, k in history:
             f.write(f"{g},{e:.4f},{k}\n")
-    return best_error, len(population[0])
+    return archive_err, len(archive)
+
+
+# def polish(chromosome, target, n, kmax, n_iters, target_error, out_dir,
+#            max_step=8):
+#     """Greedy local search: tiny vertex/color tweaks, accept any improvement."""
+#     e = error(chromosome, target, n)
+#     print(f"  polish start: error={e:.3f}%, k={len(chromosome)}")
+#     accepted = 0
+#     t0 = time.time()
+#     for it in range(n_iters):
+#         if not chromosome:
+#             break
+#         action = random.random()
+#         idx = random.randrange(len(chromosome))
+#         if action < 0.80 and chromosome:  # nudge a vertex
+#             verts, color = chromosome[idx]
+#             verts_new = [tuple(v) for v in verts]
+#             i = random.randrange(3)
+#             step = random.choice([1, 2, 3, 5, 8, 12, 20])
+#             dx = random.randint(-step, step)
+#             dy = random.randint(-step, step)
+#             x, y = verts_new[i]
+#             verts_new[i] = (x + dx, y + dy)
+#             new_tri = [verts_new, color]
+#             old_tri = chromosome[idx]
+#             chromosome[idx] = new_tri
+#             e_new = error(chromosome, target, n)
+#             if e_new < e:
+#                 e = e_new
+#                 accepted += 1
+#             else:
+#                 chromosome[idx] = old_tri
+#         elif action < 0.88:  # flip color
+#             verts, color = chromosome[idx]
+#             chromosome[idx] = [verts, 1 - color]
+#             e_new = error(chromosome, target, n)
+#             if e_new < e:
+#                 e = e_new
+#                 accepted += 1
+#             else:
+#                 chromosome[idx] = [verts, color]
+#         elif action < 0.94 and len(chromosome) < kmax:  # add random triangle
+#             chromosome.append(random_triangle(n))
+#             e_new = error(chromosome, target, n)
+#             if e_new < e:
+#                 e = e_new
+#                 accepted += 1
+#             else:
+#                 chromosome.pop()
+#         elif action < 0.97 and len(chromosome) > 1:  # remove triangle
+#             removed = chromosome.pop(idx)
+#             e_new = error(chromosome, target, n)
+#             if e_new < e:
+#                 e = e_new
+#                 accepted += 1
+#             else:
+#                 chromosome.insert(idx, removed)
+#         else:  # replace triangle
+#             old = chromosome[idx]
+#             chromosome[idx] = random_triangle(n)
+#             e_new = error(chromosome, target, n)
+#             if e_new < e:
+#                 e = e_new
+#                 accepted += 1
+#             else:
+#                 chromosome[idx] = old
+
+#         if it % 500 == 0:
+#             elapsed = time.time() - t0
+#             print(f"  polish it={it:6d}  error={e:6.3f}%  k={len(chromosome):3d}  "
+#                   f"accepted={accepted}  t={elapsed:6.1f}s")
+#         if it % 2000 == 0 and it > 0:
+#             save_image(rasterize(chromosome, n),
+#                        os.path.join(out_dir, f"polish_{it:05d}.png"))
+#             save_chromosome(chromosome, os.path.join(out_dir, "best.json"))
+#         if e <= target_error:
+#             print(f"  polish: target {target_error}% reached at iter {it} (error={e:.3f}%).")
+#             break
+#     save_image(rasterize(chromosome, n), os.path.join(out_dir, "best.png"))
+#     save_chromosome(chromosome, os.path.join(out_dir, "best.json"))
+#     return chromosome, e
 
 
 def main():
@@ -147,28 +295,16 @@ def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     save_image(target, os.path.join(OUTPUT_DIR, "target.png"))
 
-    if len(args) > 1:  # single-run mode: ga_triangles.py image.png 30
-        kmax = int(args[1])
-        run_ga(target, IMG_SIZE, kmax, N_GENERATIONS,
-               os.path.join(OUTPUT_DIR, f"kmax_{kmax:03d}"))
-        return
+    kmax = int(args[1]) if len(args) > 1 else KMAX_DEFAULT
+    target_err = float(args[2]) if len(args) > 2 else TARGET_ERROR
+    seed_path = args[3] if len(args) > 3 else None
+    out = os.path.join(OUTPUT_DIR, f"kmax_{kmax:03d}")
+    seed = load_chromosome(seed_path) if seed_path else None
 
-    summary = []
-    for kmax in KMAX_VALUES:
-        print(f"\n=== Running k_max = {kmax} ===")
-        out = os.path.join(OUTPUT_DIR, f"kmax_{kmax:03d}")
-        err, k = run_ga(target, IMG_SIZE, kmax, N_GENERATIONS, out)
-        summary.append((kmax, err, k))
-
-    with open(os.path.join(OUTPUT_DIR, "summary.csv"), "w") as f:
-        f.write("kmax,final_error,triangles_used\n")
-        for kmax, err, k in summary:
-            f.write(f"{kmax},{err:.4f},{k}\n")
-
-    print("\n=== Sweep complete ===")
-    print(f"{'kmax':>6} {'error%':>8} {'tris':>6}")
-    for kmax, err, k in summary:
-        print(f"{kmax:>6} {err:>8.2f} {k:>6}")
+    # Pure GA — keep running until target error reached
+    err, k = run_ga(target, IMG_SIZE, kmax, N_GENERATIONS, out, target_err,
+                    seed_chromosome=seed)
+    print(f"\nGA done: kmax={kmax}, error={err:.3f}%, triangles={k}")
 
 
 if __name__ == "__main__":
